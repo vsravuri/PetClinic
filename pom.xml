@@ -55,6 +55,14 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    
+    <distributionManagement>
+       <repository>
+         <id>internal.repo</id>
+         <name>Internal repo</name>
+         <url>file:///home/devops/</url>
+       </repository>
+   </distributionManagement>
 
     <dependencies>
         <dependency>
