@@ -60,7 +60,7 @@
        <repository>
          <id>internal.repo</id>
          <name>Internal repo</name>
-         <url>file:///home/devops/</url>
+         <url>file:///var/lib/jenkins/deploy/</url>
        </repository>
    </distributionManagement>
 
