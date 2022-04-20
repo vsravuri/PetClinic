@@ -67,8 +67,8 @@ pipeline {
         }
     stage('Deploy-App-QA') {
   	   steps {
-    		sh 'sed -i "s/bno/"$BUILD_NUMBER"/g" deploy-app.yml'
-    		sh 'kubectl apply -f deploy-app.yml'
+    		sh 'sed -i "s/bno/"$BUILD_NUMBER"/g" $WORKSPACE/deploy/deploy-app.yml'
+    		sh 'kubectl apply -f $WORKSPACE/deploy/deploy-app.yml'
 	   }
 	   post { 
               always { 
