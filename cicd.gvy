@@ -67,8 +67,7 @@ pipeline {
         }
     stage('Deploy-App-QA') {
   	   steps {
-    		sh 'sed -i "s/bno/"$BUILD_NUMBER"/g" $WORKSPACE/deploy/deploy-app.yml'
-    		sh 'kubectl apply -f $WORKSPACE/deploy/deploy-app.yml'
+              sh 'sudo ansible-playbook --inventory /tmp/inv $WORKSPACE/deploy/deploy-kube.yml --extra-vars "env=qa build=$BUILD_NUMBER"'
 	   }
 	   post { 
               always { 
