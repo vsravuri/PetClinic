@@ -7,5 +7,7 @@
       name: petclinic
       state: started
       auto_remove: true
+      exposed_ports:
+      - 8080
       ports:
-        - "8080:80"
+        - "8080:8080"
