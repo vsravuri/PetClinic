@@ -1,0 +1,11 @@
+---
+- hosts: qa
+  tasks:
+  - name: deploy petclinic docker container
+    docker_container:
+      image: ravuris78/petclinic:{{build}}
+      name: petclinic
+      state: started
+      auto_remove: true
+      ports:
+        - "8080:80"
